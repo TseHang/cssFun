@@ -1,0 +1,57 @@
+body,html,div,img,p{
+    margin: 0;
+    padding: 0;
+}
+
+.stage {
+    width:100vw;
+    height:100vh;
+    background-image: url(ininder/background.jpeg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    perspective: 800px;
+}
+
+.stage > div.container{
+    width:220px;
+    height:220px;
+
+    transform-style: preserve-3d;
+    transition:all 0.5s ease-out;
+}
+
+div.content:hover{
+    cursor: pointer;
+}
+
+.container > div:nth-child(1) { transform: rotateY( 0deg ) translateZ(220px); }
+.container > div:nth-child(2) { transform: rotateY( 60deg ) translateZ(220px); }
+.container > div:nth-child(3) { transform: rotateY( 120deg ) translateZ(220px); }
+.container > div:nth-child(4) { transform: rotateY( 180deg ) translateZ(240px); }
+.container > div:nth-child(5) { transform: rotateY( 240deg ) translateZ(280px); }
+.container > div:nth-child(6) { transform: rotateY( 300deg ) translateZ(240px); }
+
+div.container > div.content{
+    position: absolute;
+    text-align: center;
+    backface-visibility:hidden;
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > img.straight{
+    width:220px;
+}
+.content > img.horizon{
+    width:300px;
+}
